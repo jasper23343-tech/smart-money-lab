@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-sapling.jpg">
-<link rel="stylesheet" href="styles.css?v=1795519874">
+<link rel="stylesheet" href="styles.css?v=1795610000">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -87,10 +87,9 @@
     <div class="ticker ticker--logos" aria-hidden="true"><div class="ticker__track"><span class="school"><img src="img/logos/dulles.png" alt="" height="56" loading="lazy"><span>Dulles Middle School</span></span><span class="school"><img src="img/logos/sartartia.png" alt="" height="56" loading="lazy"><span>Sartartia Middle School</span></span><span class="school school--mark school--tall"><img src="img/logos/banks.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/fbisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark school--wide"><img src="img/logos/lcisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/titliyan.png" alt="" height="56" loading="lazy"></span><span class="school"><img src="img/logos/dulles.png" alt="" height="56" loading="lazy"><span>Dulles Middle School</span></span><span class="school"><img src="img/logos/sartartia.png" alt="" height="56" loading="lazy"><span>Sartartia Middle School</span></span><span class="school school--mark school--tall"><img src="img/logos/banks.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/fbisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark school--wide"><img src="img/logos/lcisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/titliyan.png" alt="" height="56" loading="lazy"></span><span class="school"><img src="img/logos/dulles.png" alt="" height="56" loading="lazy"><span>Dulles Middle School</span></span><span class="school"><img src="img/logos/sartartia.png" alt="" height="56" loading="lazy"><span>Sartartia Middle School</span></span><span class="school school--mark school--tall"><img src="img/logos/banks.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/fbisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark school--wide"><img src="img/logos/lcisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/titliyan.png" alt="" height="56" loading="lazy"></span><span class="school"><img src="img/logos/dulles.png" alt="" height="56" loading="lazy"><span>Dulles Middle School</span></span><span class="school"><img src="img/logos/sartartia.png" alt="" height="56" loading="lazy"><span>Sartartia Middle School</span></span><span class="school school--mark school--tall"><img src="img/logos/banks.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/fbisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark school--wide"><img src="img/logos/lcisd.png" alt="" height="56" loading="lazy"></span><span class="school school--mark"><img src="img/logos/titliyan.png" alt="" height="56" loading="lazy"></span></div></div>
   </section>
 
-  <section class="section" id="about" aria-labelledby="about-h">
+  <section class="section" id="about" aria-labelledby="about-h" style="padding-bottom:clamp(24px,3vw,40px)">
     <div class="wrap orbit">
       <div class="orbit__text">
-        <span class="pill reveal"><i></i>About us</span>
         <h2 id="about-h" class="reveal">Most people learn money <span class="accent">the hard way.</span> We teach it in fifth grade.</h2>
         <p class="reveal">After the first overdraft or the first scam call is too late. So students teach students, peer to peer, in words that stick, and then help protect their grandparents too.</p>
         <div class="reveal"><a class="cta cta--ink" href="#founder"><span class="cta__label">Read our story</span><span class="cta__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
@@ -106,11 +105,48 @@
     </div>
   </section>
 
+  <section class="section" id="chapters" style="padding-top:0" aria-labelledby="chapters-h">
+    <div class="wrap">
+      <div class="globe-panel">
+        <div class="globe-panel__text">
+          <h2 id="chapters-h" class="reveal">From Sugar Land to Atlanta, <span>and growing.</span></h2>
+          <p class="reveal">Every chapter is run by students in their own city. Pick one to spin the globe there.</p>
+          <div class="chapters reveal" role="list">
+            <button class="chapter is-active" type="button" role="listitem" data-lat="29.62" data-lng="-95.63" aria-pressed="true">
+              <span class="chapter__pin" aria-hidden="true"></span>
+              <span><b>Sugar Land, Texas</b><small>Founding chapter · since 2025</small></span>
+            </button>
+            <button class="chapter" type="button" role="listitem" data-lat="33.75" data-lng="-84.39" aria-pressed="false">
+              <span class="chapter__pin" aria-hidden="true"></span>
+              <span><b>Atlanta, Georgia</b><small>Newest chapter · led by Ayaan Tuteja</small></span>
+            </button>
+            <a class="chapter chapter--add" href="volunteer.html" role="listitem">
+              <span class="chapter__pin" aria-hidden="true">+</span>
+              <span><b>Your city next?</b><small>Start a chapter at your school</small></span>
+            </a>
+          </div>
+          <form class="finder reveal" id="finder" novalidate>
+            <label for="zip">Find a workshop near me</label>
+            <div class="finder__row">
+              <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Enter your ZIP code" aria-describedby="finder-out">
+              <button class="finder__btn" type="submit">Search</button>
+            </div>
+            <p class="finder__out" id="finder-out" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="globe-wrap" aria-hidden="true">
+          <canvas class="globe" id="globe"></canvas>
+          <div class="globe-legend"><span><i class="dot dot--gold"></i>Smart Money Lab chapter</span><span>Drag to spin</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section class="section mission" id="mission" aria-labelledby="mission-h">
     <div class="wrap">
       <div class="mission__card">
         <div class="mission__top">
-          <span class="pill reveal"><i></i>Our mission</span>
           <img class="mission__logo" src="img/small-logo.png" alt="" width="56" height="60">
         </div>
         <h2 id="mission-h" class="mission__text reveal">To make financial education and leadership <span class="hl">free for every generation.</span> Students learn real-world money and leadership skills, and seniors learn to <span class="hl hl--gold">protect themselves from scams.</span></h2>
@@ -132,7 +168,7 @@
     <div class="wrap">
       <div class="impact reveal">
         <div class="impact__top">
-          <div><span class="pill pill--light"><i></i>Our impact</span><h2 id="impact-h">Small classes, adding up to something big.</h2></div>
+          <div><h2 id="impact-h">Small classes, adding up to something big.</h2></div>
           <span class="impact__logo"><img src="img/small-logo-64.png" alt="" width="34" height="34"></span>
         </div>
         <div class="impact__grid">
@@ -148,7 +184,7 @@
   <section class="section" id="programs" aria-labelledby="programs-h">
     <div class="wrap">
       <div class="head head--split">
-        <div><span class="pill reveal"><i></i>Programs</span><h2 id="programs-h" class="reveal" style="margin-top:18px">Three labs. <span class="accent">One idea.</span></h2></div>
+        <div><h2 id="programs-h" class="reveal">Three labs. <span class="accent">One idea.</span></h2></div>
         <p class="reveal">Learn it before you need it. Every lab is interactive, led by trained student facilitators, and measured with a short survey before and after.</p>
       </div>
       <div class="slides" data-slides>
@@ -217,49 +253,11 @@
     </div>
   </section>
 
-  <section class="section" id="chapters" aria-labelledby="chapters-h">
-    <div class="wrap">
-      <div class="globe-panel">
-        <div class="globe-panel__text">
-          <span class="pill pill--light reveal"><i></i>Chapters</span>
-          <h2 id="chapters-h" class="reveal">From Sugar Land to Atlanta, <span>and growing.</span></h2>
-          <p class="reveal">Every chapter is run by students in their own city. Pick one to spin the globe there.</p>
-          <div class="chapters reveal" role="list">
-            <button class="chapter is-active" type="button" role="listitem" data-lat="29.62" data-lng="-95.63" aria-pressed="true">
-              <span class="chapter__pin" aria-hidden="true"></span>
-              <span><b>Sugar Land, Texas</b><small>Founding chapter · since 2025</small></span>
-            </button>
-            <button class="chapter" type="button" role="listitem" data-lat="33.75" data-lng="-84.39" aria-pressed="false">
-              <span class="chapter__pin" aria-hidden="true"></span>
-              <span><b>Atlanta, Georgia</b><small>Newest chapter · led by Ayaan Tuteja</small></span>
-            </button>
-            <a class="chapter chapter--add" href="volunteer.html" role="listitem">
-              <span class="chapter__pin" aria-hidden="true">+</span>
-              <span><b>Your city next?</b><small>Start a chapter at your school</small></span>
-            </a>
-          </div>
-          <form class="finder reveal" id="finder" novalidate>
-            <label for="zip">Find a workshop near me</label>
-            <div class="finder__row">
-              <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Enter your ZIP code" aria-describedby="finder-out">
-              <button class="finder__btn" type="submit">Search</button>
-            </div>
-            <p class="finder__out" id="finder-out" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-        <div class="globe-wrap" aria-hidden="true">
-          <canvas class="globe" id="globe"></canvas>
-          <div class="globe-legend"><span><i class="dot dot--gold"></i>Smart Money Lab chapter</span><span>Drag to spin</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section--tight" id="classroom" aria-labelledby="classroom-h">
     <div class="wrap">
       <div class="film-panel">
         <div class="head head--split">
-          <div><span class="pill pill--light reveal"><i></i>In the classroom</span><h2 id="classroom-h" class="reveal" style="margin-top:18px">Real rooms. Real questions.</h2></div>
+          <div><h2 id="classroom-h" class="reveal">Real rooms. Real questions.</h2></div>
           <p class="reveal">No lectures from a stage. Students sit up front, the facilitator is a few years older at most, and every session ends with a quiz where every hand goes up.</p>
         </div>
         <div class="film reveal">
@@ -278,7 +276,7 @@
   <section class="section reviews" id="reviews" aria-labelledby="reviews-h">
     <div class="wrap">
       <div class="head head--split">
-        <div><span class="pill reveal"><i></i>Reviews</span><h2 id="reviews-h" class="reveal" style="margin-top:18px">Thank-you notes <span class="accent">we keep.</span></h2></div>
+        <div><h2 id="reviews-h" class="reveal">Thank-you notes <span class="accent">we keep.</span></h2></div>
         <p class="reveal">What teachers say after a workshop, and the notes students write to us by hand.</p>
       </div>
       <div class="reviews__bar">
@@ -305,13 +303,13 @@
             <svg class="rq__mark" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1.3 12 0l1.4 3.4C9 4.7 6.9 7.3 6.6 11H12v13H0Zm19 0V14c0-8 4-12.7 12-14l1.4 3.4C28 4.7 25.9 7.3 25.6 11H31v13H19Z" fill="currentColor"/></svg>
             <blockquote>“The student worksheet so they could identify their profile; the real life examples and school situations so students can identify with the leadership styles presented.”</blockquote>
             <span class="stars" aria-label="5 out of 5">★★★★★</span>
-            <figcaption><span class="rq__initial" aria-hidden="true">AI</span><span><b>Awty International School</b>Educator review</span></figcaption>
+            <figcaption><img src="img/logos/awty.png" alt="" height="40"><span><b>Awty International School</b>Educator review</span></figcaption>
           </figure>
           <figure class="rq">
             <svg class="rq__mark" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1.3 12 0l1.4 3.4C9 4.7 6.9 7.3 6.6 11H12v13H0Zm19 0V14c0-8 4-12.7 12-14l1.4 3.4C28 4.7 25.9 7.3 25.6 11H31v13H19Z" fill="currentColor"/></svg>
             <blockquote>“You are changing the world!! Thank you for what you do.”</blockquote>
             <span class="stars" aria-label="5 out of 5">★★★★★</span>
-            <figcaption><span class="rq__initial" aria-hidden="true">GT</span><span><b>Gene Tomas High School</b>Educator review</span></figcaption>
+            <figcaption><img src="img/logos/tomas.png" alt="" height="40"><span><b>Gene Tomas High School</b>Educator review</span></figcaption>
           </figure>
       </div>
       <h3 class="reviews__label reviews__label--notes">From students, by hand</h3>
@@ -348,7 +346,6 @@
   <section class="section" id="founder" aria-labelledby="founder-h" style="padding-top:0">
     <div class="wrap founder">
       <div class="founder__text">
-        <span class="pill reveal"><i></i>Our story</span>
         <h2 id="founder-h" class="reveal">Started at 14, <span class="accent">in eighth grade.</span></h2>
         <div class="founder__body reveal">
           <p>Nevaan Chandak saw how missing a few money basics could turn into real hardship, and that budgeting and saving were being taught too late, if at all.</p>
@@ -367,10 +364,39 @@
     </div>
   </section>
 
+  <section class="section" id="team" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="head head--split">
+        <h2 id="team-h" class="reveal">The students <span class="accent">running it.</span></h2>
+        <p class="reveal">Smart Money Lab is built and led by students, from the founder to the people opening chapters in new cities.</p>
+      </div>
+      <div class="team">
+        <article class="member reveal">
+          <div class="member__photo"><img src="img/nevaan.jpg" alt="Nevaan Chandak" width="500" height="669" loading="lazy" decoding="async"></div>
+          <div class="member__tags"><span class="tag tag--green">Founder</span><span class="tag">Sugar Land chapter</span></div>
+          <h3 translate="no">Nevaan Chandak</h3>
+          <p>Founder of Smart Money Lab and leader of the founding chapter in Sugar Land, Texas.</p>
+        </article>
+        <article class="member reveal" style="--d:.08s">
+          <div class="member__photo member__photo--blank" data-initials="JM"></div>
+          <div class="member__tags"><span class="tag tag--blue">CTO</span><span class="tag">Design lead</span></div>
+          <h3 translate="no">Jasper Merks</h3>
+          <p>Runs technology and design, from this website to the tools chapters use to run workshops.</p>
+        </article>
+        <article class="member reveal" style="--d:.16s">
+          <div class="member__photo member__photo--blank" data-initials="AT"></div>
+          <div class="member__tags"><span class="tag tag--gold">Chapter leader</span><span class="tag">Atlanta</span></div>
+          <h3 translate="no">Ayaan Tuteja</h3>
+          <p>Leads the Atlanta, Georgia chapter, the newest Smart Money Lab city.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="join" aria-labelledby="join-h">
     <div class="wrap">
       <div class="head head--split">
-        <div><span class="pill reveal"><i></i>Get involved</span><h2 id="join-h" class="reveal" style="margin-top:18px">Bring it to <span class="accent">your people.</span></h2></div>
+        <div><h2 id="join-h" class="reveal">Bring it to <span class="accent">your people.</span></h2></div>
         <p class="reveal">Schools, clubs and senior centers book a workshop. Students who want to teach join as volunteers, then start a chapter of their own.</p>
       </div>
       <div class="join">
@@ -440,7 +466,7 @@
   </div>
   <button class="game-btn" type="button" aria-expanded="false" aria-controls="game-menu"><span class="game-btn__die"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="#e23b3b"/><circle cx="17" cy="7" r="2.2" fill="#1f8a4c"/><circle cx="12" cy="12" r="2.2" fill="#f2b63c"/><circle cx="7" cy="17" r="2.2" fill="#3a7bd5"/><circle cx="17" cy="17" r="2.2" fill="#14213d"/></svg></span>New board game!<span class="game-btn__dot" aria-hidden="true"></span></button>
 </div>
-<script src="globe.js?v=1795519874" defer></script>
-<script src="main.js?v=1795519874" defer></script>
+<script src="globe.js?v=1795610000" defer></script>
+<script src="main.js?v=1795610000" defer></script>
 </body>
 </html>

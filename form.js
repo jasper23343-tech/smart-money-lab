@@ -1,4 +1,5 @@
-// Sends a form on this site to the organisation's existing Google Form, so responses keep landing in the same sheet.
+// Sends a form on this site to the organisation's existing Google Form (same sheet as before)
+// and emails a readable copy to contactus@smartmoneylab.info through FormSubmit.
 (() => {
   const form = document.querySelector('form[data-google]');
   if (!form) return;
@@ -53,7 +54,22 @@
     btn.disabled = true;
     label.textContent = 'Sending…';
     try {
-      await fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) });
+      // readable copy for the inbox: "Label: answer" instead of Google's entry IDs
+      const copy = { _subject: `New ${form.dataset.kind || 'form'} response: ${form.querySelector('input[type=text]')?.value || ''}`.trim(), _template: 'table', _captcha: 'false' };
+      form.querySelectorAll('.field, [data-required-group]').forEach((f) => {
+        const label = (f.querySelector('label, legend')?.childNodes[0]?.textContent || '').trim();
+        const els = [...f.querySelectorAll('input, select, textarea')];
+        if (!label || !els.length) return;
+        const val = els.filter((el) => !['checkbox', 'radio'].includes(el.type) || el.checked).map((el) => el.value).join(', ');
+        copy[label] = val;
+      });
+      const mail = form.querySelector('input[type=email]');
+      if (mail) copy._replyto = mail.value;
+      const [g, m] = await Promise.allSettled([
+        fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) }),
+        fetch('https://formsubmit.co/ajax/contactus@smartmoneylab.info', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(copy) }),
+      ]);
+      if (g.status === 'rejected' && m.status === 'rejected') throw new Error('offline');
       const done = document.getElementById(form.dataset.done);
       form.hidden = true;
       done.hidden = false;

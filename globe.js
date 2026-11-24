@@ -6,7 +6,7 @@ const chapters = [...document.querySelectorAll('.chapter[data-lat]')];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const toAngles = (lat, lng) => [Math.PI - ((lng * Math.PI) / 180 - Math.PI / 2), (lat * Math.PI) / 180];
 
-let target = toAngles(29.62, -95.63);
+let target = toAngles(37.5, -96); // centre of the US on load
 let you = null; // [lat, lng] once a ZIP is searched
 let setYou = () => {};
 
@@ -47,7 +47,6 @@ if (canvas) {
           const d = ((target[0] - phi + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI;
           phi += idle ? d * 0.06 : 0;
           if (Math.abs(d) < 0.001 && !reduce) { idle = false; }
-          if (!idle && !reduce) phi += 0.0016;
         }
         theta += ((target[1] * 0.85) - theta) * 0.06;
         s.phi = phi + dragDelta;
